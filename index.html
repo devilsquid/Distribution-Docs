@@ -1,0 +1,782 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <title>Reference</title>
+    <!--link rel="stylesheet" href="ldoc_devilsquid.css" type="text/css" /-->
+    <link href='https://fonts.googleapis.com/css?family=Cousine' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://devilsquid.com/files/docs-base-min.css">
+    <link rel="stylesheet" href="https://devilsquid.com/files/docs-pure-min.css">
+    <link rel="stylesheet" href="https://devilsquid.com/files/docs-side-menu.css">
+    <link rel="stylesheet" href="https://devilsquid.com/files/docs-content.css">
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="layout">
+
+
+<!-- Menu -->
+
+<div id="menu">
+<div class="pure-menu">
+<div class="DS-logo"><a href="https://devilsquid.com"><img src="https://devilsquid.com/wp-content/uploads/2016/05/logotext-devilsquid_white@2x.png"></a></div>
+<br/>
+<h3>Distribute</h3>
+<h5>distribute.lua</h5>
+
+
+<!--h4>Contents</h4>
+<ul class="pure-menu-list">
+<li class="pure-menu-item"><a href="#Functions">Functions</a></li>
+</ul-->
+
+
+<!--h4>Modules</h4>
+<ul class="nowrap pure-menu-list">
+  <li class="pure-menu-item"><strong>Distribute</strong></li>
+</ul-->
+
+<ul class="pure-menu-list">
+<h4><a href="#Functions">Functions</a></h4>
+  <!--li class="pure-menu-item"><a href="#Arc">Arc (numberOfObjects, startAngle, endAngle, radius)</a></li-->
+  <li class="pure-menu-item"><a href="#Arc">Arc()</a></li>
+  <!--li class="pure-menu-item"><a href="#ArcObjects">ArcObjects (options)</a></li-->
+  <li class="pure-menu-item"><a href="#ArcObjects">ArcObjects()</a></li>
+  <!--li class="pure-menu-item"><a href="#Arrow">Arrow (numberOfObjects, width, height)</a></li-->
+  <li class="pure-menu-item"><a href="#Arrow">Arrow()</a></li>
+  <!--li class="pure-menu-item"><a href="#ArrowObjects">ArrowObjects (options)</a></li-->
+  <li class="pure-menu-item"><a href="#ArrowObjects">ArrowObjects()</a></li>
+  <!--li class="pure-menu-item"><a href="#Circle">Circle (numberOfObjects, radius)</a></li-->
+  <li class="pure-menu-item"><a href="#Circle">Circle()</a></li>
+  <!--li class="pure-menu-item"><a href="#CircleObjects">CircleObjects (options)</a></li-->
+  <li class="pure-menu-item"><a href="#CircleObjects">CircleObjects()</a></li>
+  <!--li class="pure-menu-item"><a href="#FilledRectangle">FilledRectangle (numberOfObjects, width, height)</a></li-->
+  <li class="pure-menu-item"><a href="#FilledRectangle">FilledRectangle()</a></li>
+  <!--li class="pure-menu-item"><a href="#FilledRectangleObjects">FilledRectangleObjects (options)</a></li-->
+  <li class="pure-menu-item"><a href="#FilledRectangleObjects">FilledRectangleObjects()</a></li>
+  <!--li class="pure-menu-item"><a href="#Line">Line (numberOfObjects, x1, y1, x2, y2)</a></li-->
+  <li class="pure-menu-item"><a href="#Line">Line()</a></li>
+  <!--li class="pure-menu-item"><a href="#LineObjects">LineObjects (options)</a></li-->
+  <li class="pure-menu-item"><a href="#LineObjects">LineObjects()</a></li>
+  <!--li class="pure-menu-item"><a href="#Rectangle">Rectangle (numberOfObjects, width, height)</a></li-->
+  <li class="pure-menu-item"><a href="#Rectangle">Rectangle()</a></li>
+  <!--li class="pure-menu-item"><a href="#RectangleObjects">RectangleObjects (options)</a></li-->
+  <li class="pure-menu-item"><a href="#RectangleObjects">RectangleObjects()</a></li>
+</table>
+
+</div>
+</div>
+
+<div id="main">
+
+<div class="header">
+<h2>Distribute objects to a formation.</h2>
+<h1>Distribute Module</h1>
+<p> A module to help distributing objects to a nice formation
+ by creating coordinates you can move you objects to or move them directly. <br><br>
+ This module is developed by <a href="https://devilssquid.com">DevilSquid</a> – your learning resource for Corona SDK.</p>
+
+    <table class="pure-table pure-table-horizontal">
+    <thead><tr><th><strong>Info</strong></th><th></th></tr></thead>
+        <tr><td><strong>Copyright</strong></td><td><a href="https://devilssquid.com">DevilSquid</a>, René Aye 2016</td></tr>
+        <tr><td><strong>License</strong></td><td> Commercial<br>
+ <span style="font-size: 0.8em;">You are allowed to use the code for any private and commercial projects.
+ You are not allowed to share the code.
+ The module can be obtained through a paid membership at devilsquid.com</span></td></tr>
+        <tr><td><strong>Author</strong></td><td>René Aye</td></tr>
+      <tr><td><strong>Last updated</strong></td><td>2016-06-06 11:51:17</td></tr>
+    </table>
+</div>
+
+<div class="content">
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list pure-table pure-table-striped">
+	<tr>
+	<td class="name" nowrap><a href="#Arc">Arc (numberOfObjects, startAngle, endAngle, radius)</a></td>
+	<td class="summary">Create a table of coordinates that describe an arc shape
+ An arc is a open circle that a has a start and a end angle to describe that open circle
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-arc.png" width="250px"></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArcObjects">ArcObjects (options)</a></td>
+	<td class="summary">Distribute objects on an arc shape
+ An arc is a open circle that a has a start and a end angle to describe that open circle
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-arc.png" width="250px"></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Arrow">Arrow (numberOfObjects, width, height)</a></td>
+	<td class="summary">Create a table of coordinates that describe a non closed arrow shape
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-arrow.png" width="250px"></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArrowObjects">ArrowObjects (options)</a></td>
+	<td class="summary">Distribute objects on an arrow shape
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-arrow.png" width="250px"></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Circle">Circle (numberOfObjects, radius)</a></td>
+	<td class="summary">Create a table of coordinates that describe a circle shape
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-circ.png" width="250px"></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#CircleObjects">CircleObjects (options)</a></td>
+	<td class="summary">Distribute objects on a circle shape
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-circ.png" width="250px"></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#FilledRectangle">FilledRectangle (numberOfObjects, width, height)</a></td>
+	<td class="summary">Create a table of coordinates that describe a filled rectangle shape
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-filled-quad.png" width="250px"></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#FilledRectangleObjects">FilledRectangleObjects (options)</a></td>
+	<td class="summary">Distribute objects on a filled rectangular shape</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Line">Line (numberOfObjects, x1, y1, x2, y2)</a></td>
+	<td class="summary">Create a table of coordinates that describe a line shape</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LineObjects">LineObjects (options)</a></td>
+	<td class="summary">Distribute objects on a line shape</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Rectangle">Rectangle (numberOfObjects, width, height)</a></td>
+	<td class="summary">Create a table of coordinates that describe a rectangle shape
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-quad.png" width="250px"></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#RectangleObjects">RectangleObjects (options)</a></td>
+	<td class="summary">Distribute objects on a rectangular shape
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-quad.png" width="250px"></td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Arc"></a>
+    <strong>Arc (numberOfObjects, startAngle, endAngle, radius)</strong>
+    </dt>
+    <dd>
+    Create a table of coordinates that describe an arc shape
+ An arc is a open circle that a has a start and a end angle to describe that open circle
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-arc.png" width="250px">
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">numberOfObjects</span>
+            <span class="types"><span class="type">int</span></span>
+         the number of objects to distribute
+        </li>
+        <li><span class="parameter">startAngle</span>
+            <span class="types"><span class="type">int</span></span>
+         the starting angle of the arc
+        </li>
+        <li><span class="parameter">endAngle</span>
+            <span class="types"><span class="type">int</span></span>
+         the ending angle of the arc
+        </li>
+        <li><span class="parameter">radius</span>
+            <span class="types"><span class="type">int</span></span>
+         the radius of the arc</p>
+
+<p> <ul>
+ <li>0 degrees is looking to the east</li>
+ <li>-90 degrees would be north</li>
+ <li>90 degrees is south</li>
+ <li>-180 or 180 degress is west</li>
+ </ul>
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table with position coordinates
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="keyword">local</span> coordinatesTable = Distribute:Arc(<span class="number">55</span>, -<span class="number">90</span>, <span class="number">90</span>, <span class="number">150</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ArcObjects"></a>
+    <strong>ArcObjects (options)</strong>
+    </dt>
+    <dd>
+    Distribute objects on an arc shape
+ An arc is a open circle that a has a start and a end angle to describe that open circle
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-arc.png" width="250px">
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">options</span>
+        <p> a table with options</p>
+
+<ul>
+<li><code>tableOfObjects</code>:     (<strong>Table</strong>) a table with the objects to be distributed</li>
+<li><code>startAngle</code>:         (<strong>number</strong>) starting angle of the arc (<em>default</em>: 0)</li>
+<li><code>endAngle</code>:           (<strong>number</strong>) ending angle of the arc (<em>default</em>: 180)</li>
+<li><code>radius</code>:             (<strong>number</strong>) the radius of the circle (<em>default</em>: 150)</li>
+<li><code>offsetX</code>:            (<strong>number</strong>) moves the whole formation (<em>default</em>: 0)</li>
+<li><code>offsetY</code>:            (<strong>number</strong>) moves the whole formation (<em>default</em>: 0)</li>
+<li><code>transition</code>:        (<strong>transition</strong>) a easing transiton (<em>default</em>: easing.inOutQuad)</li>
+<li><p><code>time</code>:                  (<strong>number</strong>) the time of the transition (<em>default</em>: 1000)</p></li>
+<li><p>0 degrees is looking to the east</p></li>
+<li>-90 degrees would be north</li>
+<li>90 degrees is south</li>
+<li>-180 or 180 degress is west</li>
+</ul>
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        nothing
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="keyword">local</span> Distribute = <span class="global">require</span>(<span class="string">"devilsquid.distribute.distribute"</span>)
+
+ Distribute:ArcObjects({
+ 	tableOfObjects 	= myTableOfObjects,
+ 	startAngle 		= -<span class="number">90</span>,
+ 	endAngle 		= <span class="number">90</span>,
+ 	radius 			= <span class="number">150</span>,
+ 	offsetX 		= display.contentCenterX,
+ 	offsetY 		= display.contentCenterY,
+ 	transition 		= easing.inOutBounce,
+ 	time 			= <span class="number">1200</span>
+ 	})</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Arrow"></a>
+    <strong>Arrow (numberOfObjects, width, height)</strong>
+    </dt>
+    <dd>
+    Create a table of coordinates that describe a non closed arrow shape
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-arrow.png" width="250px">
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">numberOfObjects</span>
+            <span class="types"><span class="type">int</span></span>
+         the number of objects to distribute
+        </li>
+        <li><span class="parameter">width</span>
+            <span class="types"><span class="type">int</span></span>
+         the width of the arrow
+        </li>
+        <li><span class="parameter">height</span>
+            <span class="types"><span class="type">int</span></span>
+         the height of the arrow
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table with position coordinates
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="keyword">local</span> coordinatesTable = Distribute:Arrow(<span class="number">55</span>, <span class="number">100</span>, <span class="number">200</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ArrowObjects"></a>
+    <strong>ArrowObjects (options)</strong>
+    </dt>
+    <dd>
+    Distribute objects on an arrow shape
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-arrow.png" width="250px">
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">options</span>
+        <p> a table with options</p>
+
+<ul>
+<li><code>tableOfObjects</code>:     (<strong>Table</strong>) a table with the objects to be distributed</li>
+<li><code>width</code>:              (<strong>number</strong>) the width of the arrow (<em>default</em>: 300)</li>
+<li><code>height</code>:             (<strong>number</strong>) the height of the arrow (<em>default</em>: 300)</li>
+<li><code>offsetX</code>:            (<strong>number</strong>) moves the whole formation (<em>default</em>: 0)</li>
+<li><code>offsetY</code>:            (<strong>number</strong>) moves the whole formation (<em>default</em>: 0)</li>
+<li><code>transition</code>:        (<strong>transition</strong>) a easing transiton (<em>default</em>: easing.inOutQuad)</li>
+<li><code>time</code>:                  (<strong>number</strong>) the time of the transition (<em>default</em>: 1000)</li>
+</ul>
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        nothing
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="keyword">local</span> Distribute = <span class="global">require</span>(<span class="string">"devilsquid.distribute.distribute"</span>)
+
+ Distribute:ArrowObjects({
+ 	tableOfObjects 	= myTableOfObjects,
+ 	width 			= <span class="number">300</span>,
+ 	height 			= <span class="number">300</span>,
+ 	offsetX 		= display.contentCenterX,
+ 	offsetY 		= display.contentCenterY,
+ 	transition 		= easing.inOutBounce,
+ 	time 			= <span class="number">1200</span>
+ 	})</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Circle"></a>
+    <strong>Circle (numberOfObjects, radius)</strong>
+    </dt>
+    <dd>
+    Create a table of coordinates that describe a circle shape
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-circ.png" width="250px">
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">numberOfObjects</span>
+            <span class="types"><span class="type">int</span></span>
+         the number of objects to distribute
+        </li>
+        <li><span class="parameter">radius</span>
+            <span class="types"><span class="type">int</span></span>
+         the radius of the circle
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table with position coordinates
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="keyword">local</span> coordinatesTable = Distribute:Circle(<span class="number">55</span>, <span class="number">225</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "CircleObjects"></a>
+    <strong>CircleObjects (options)</strong>
+    </dt>
+    <dd>
+    Distribute objects on a circle shape
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-circ.png" width="250px">
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">options</span>
+        <p> a table with options</p>
+
+<ul>
+<li><code>tableOfObjects</code>:     (<strong>Table</strong>) a table with the objects to be distributed</li>
+<li><code>radius</code>:             (<strong>number</strong>) the radius of the circle (<em>default</em>: 150)</li>
+<li><code>offsetX</code>:            (<strong>number</strong>) moves the whole formation (<em>default</em>: 0)</li>
+<li><code>offsetY</code>:            (<strong>number</strong>) moves the whole formation (<em>default</em>: 0)</li>
+<li><code>transition</code>:        (<strong>transition</strong>) a easing transiton (<em>default</em>: easing.inOutQuad)</li>
+<li><code>time</code>:                  (<strong>number</strong>) the time of the transition (<em>default</em>: 1000)</li>
+</ul>
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        nothing
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="keyword">local</span> Distribute = <span class="global">require</span>(<span class="string">"devilsquid.distribute.distribute"</span>)
+
+ Distribute:CircleObjects({
+ 	tableOfObjects 	= myTableOfObjects,
+ 	radius 			= <span class="number">400</span>,
+ 	offsetX 		= display.contentCenterX,
+ 	offsetY 		= display.contentCenterY,
+ 	transition 		= easing.inOutBounce,
+ 	time 			= <span class="number">1200</span>
+ 	})</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "FilledRectangle"></a>
+    <strong>FilledRectangle (numberOfObjects, width, height)</strong>
+    </dt>
+    <dd>
+    Create a table of coordinates that describe a filled rectangle shape
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-filled-quad.png" width="250px">
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">numberOfObjects</span>
+            <span class="types"><span class="type">int</span></span>
+         the number of objects to distribute
+        </li>
+        <li><span class="parameter">width</span>
+            <span class="types"><span class="type">int</span></span>
+         the width of the rectangle
+        </li>
+        <li><span class="parameter">height</span>
+            <span class="types"><span class="type">int</span></span>
+         the height of the rectangle
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table with position coordinates
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="keyword">local</span> coordinatesTable = Distribute:FilledRectangle(<span class="number">55</span>, <span class="number">300</span>, <span class="number">400</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "FilledRectangleObjects"></a>
+    <strong>FilledRectangleObjects (options)</strong>
+    </dt>
+    <dd>
+    Distribute objects on a filled rectangular shape  <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-filled-quad.png" width="250px">
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">options</span>
+        <p> a table with options</p>
+
+<ul>
+<li><code>tableOfObjects</code>:     (<strong>Table</strong>) a table with the objects to be distributed</li>
+<li><code>width</code>:              (<strong>number</strong>) the width of the rectangle (<em>default</em>: 300)</li>
+<li><code>height</code>:             (<strong>number</strong>) the height of the rectangle (<em>default</em>: 300)</li>
+<li><code>offsetX</code>:            (<strong>number</strong>) moves the whole formation (<em>default</em>: 0)</li>
+<li><code>offsetY</code>:            (<strong>number</strong>) moves the whole formation (<em>default</em>: 0)</li>
+<li><code>transition</code>:        (<strong>transition</strong>) a easing transiton (<em>default</em>: easing.inOutQuad)</li>
+<li><code>time</code>:                  (<strong>number</strong>) the time of the transition (<em>default</em>: 1000)</li>
+</ul>
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        nothing
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="keyword">local</span> Distribute = <span class="global">require</span>(<span class="string">"devilsquid.distribute.distribute"</span>)
+
+ Distribute:FilledRectangleObjects({
+ 	tableOfObjects 	= myTableOfObjects,
+ 	width 			= <span class="number">300</span>,
+ 	height 			= <span class="number">300</span>,
+ 	offsetX 		= display.contentCenterX,
+ 	offsetY 		= display.contentCenterY,
+ 	transition 		= easing.inOutBounce,
+ 	time 			= <span class="number">1200</span>
+ 	})</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Line"></a>
+    <strong>Line (numberOfObjects, x1, y1, x2, y2)</strong>
+    </dt>
+    <dd>
+    Create a table of coordinates that describe a line shape  <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-line.png" width="250px">
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">numberOfObjects</span>
+            <span class="types"><span class="type">int</span></span>
+         the number of objects to distribute
+        </li>
+        <li><span class="parameter">x1</span>
+            <span class="types"><span class="type">int</span></span>
+         the x start position of the line
+        </li>
+        <li><span class="parameter">y1</span>
+            <span class="types"><span class="type">int</span></span>
+         the y start position of the line
+        </li>
+        <li><span class="parameter">x2</span>
+            <span class="types"><span class="type">int</span></span>
+         the x end position of the line
+        </li>
+        <li><span class="parameter">y2</span>
+            <span class="types"><span class="type">int</span></span>
+         the y end position of the line
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table with position coordinates
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="keyword">local</span> coordinatesTable = Distribute:Line(<span class="number">55</span>, <span class="number">0</span>,<span class="number">0</span>, <span class="number">150</span>,<span class="number">250</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "LineObjects"></a>
+    <strong>LineObjects (options)</strong>
+    </dt>
+    <dd>
+    Distribute objects on a line shape  <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-line.png" width="250px">
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">options</span>
+        <p> a table with options</p>
+
+<ul>
+<li><code>tableOfObjects</code>:     (<strong>table</strong>) a table with the objects to be distributed</li>
+<li><code>startPoint</code>:            (<strong>table</strong>) the start position of the line as a table with x and y fields</li>
+<li><code>endPoint</code>:              (<strong>table</strong>) the end position of the line as a table with x and y fields</li>
+<li><code>offsetX</code>:            (<strong>number</strong>) moves the whole formation (<em>default</em>: 0)</li>
+<li><code>offsetY</code>:            (<strong>number</strong>) moves the whole formation (<em>default</em>: 0)</li>
+<li><code>transition</code>:        (<strong>transition</strong>) a easing transiton (<em>default</em>: easing.inOutQuad)</li>
+<li><code>time</code>:                  (<strong>number</strong>) the time of the transition (<em>default</em>: 1000)</li>
+</ul>
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        nothing
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="keyword">local</span> Distribute = <span class="global">require</span>(<span class="string">"devilsquid.distribute.distribute"</span>)
+
+ Distribute:LineObjects({
+ 	tableOfObjects 	= myTableOfObjects,
+ 	startPoint		= {x=<span class="number">100</span>,y=<span class="number">150</span>},
+ 	endPoint		= {x=<span class="number">350</span>,y=<span class="number">688</span>},
+ 	transition 		= easing.inOutBounce,
+ 	time 			= <span class="number">1200</span>
+ 	})</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Rectangle"></a>
+    <strong>Rectangle (numberOfObjects, width, height)</strong>
+    </dt>
+    <dd>
+    Create a table of coordinates that describe a rectangle shape
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-quad.png" width="250px">
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">numberOfObjects</span>
+            <span class="types"><span class="type">int</span></span>
+         the number of objects to distribute
+        </li>
+        <li><span class="parameter">width</span>
+            <span class="types"><span class="type">int</span></span>
+         the width of the rectangle
+        </li>
+        <li><span class="parameter">height</span>
+            <span class="types"><span class="type">int</span></span>
+         the height of the rectangle
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table with position coordinates
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="keyword">local</span> coordinatesTable = Distribute:Rectangle(<span class="number">55</span>, <span class="number">300</span>, <span class="number">400</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "RectangleObjects"></a>
+    <strong>RectangleObjects (options)</strong>
+    </dt>
+    <dd>
+    Distribute objects on a rectangular shape
+ <br>
+ <img src="https://devilsquid.com/wp-content/uploads/2016/06/formation-quad.png" width="250px">
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">options</span>
+        <p> a table with options</p>
+
+<ul>
+<li><code>tableOfObjects</code>:     (<strong>Table</strong>) a table with the objects to be distributed</li>
+<li><code>width</code>:              (<strong>number</strong>) the width of the rectangle (<em>default</em>: 300)</li>
+<li><code>height</code>:             (<strong>number</strong>) the height of the rectangle (<em>default</em>: 300)</li>
+<li><code>offsetX</code>:            (<strong>number</strong>) moves the whole formation (<em>default</em>: 0)</li>
+<li><code>offsetY</code>:            (<strong>number</strong>) moves the whole formation (<em>default</em>: 0)</li>
+<li><code>transition</code>:        (<strong>transition</strong>) a easing transiton (<em>default</em>: easing.inOutQuad)</li>
+<li><code>time</code>:                  (<strong>number</strong>) the time of the transition (<em>default</em>: 1000)</li>
+</ul>
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        nothing
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="keyword">local</span> Distribute = <span class="global">require</span>(<span class="string">"devilsquid.distribute.distribute"</span>)
+
+ Distribute:RectangleObjects({
+ 	tableOfObjects 	= myTableOfObjects,
+ 	width 			= <span class="number">300</span>,
+ 	height 			= <span class="number">300</span>,
+ 	offsetX 		= display.contentCenterX,
+ 	offsetY 		= display.contentCenterY,
+ 	transition 		= easing.inOutBounce,
+ 	time 			= <span class="number">1200</span>
+ 	})</pre>
+    </ul>
+
+</dd>
+</dl>
+
+
+</div>
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2016-06-06 11:51:17 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
